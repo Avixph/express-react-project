@@ -22,7 +22,7 @@ function App() {
     setCats({cats})
 }, [])
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     let value = event.target.value
     let name = event.target.name
     setFormData(prevState => ({
@@ -31,7 +31,7 @@ function App() {
     }))
   }
 
-  handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const cat = await createCat(formData)
     setCats([cat, ...prevState.cats])
@@ -45,7 +45,7 @@ function App() {
     })
   }
 
-  handleDelete = async (catId) => {
+  const handleDelete = async (catId) => {
     await destroyCat(catId);
     setCats(prevState.cats.filter(cat => cat._id !== catId))
   }
@@ -54,8 +54,8 @@ function App() {
     <div className="app" >
       <Header />
       <Form
-        handleSubmit={() => handleSubmit}
-        handleChange={() => handleChange}
+        handleSubmit={() => handleSubmit()}
+        handleChange={() => handleChange()}
         formData={formData} />
       <CatDisplay
         cats={cats}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //you can choose to use it or not
-let baseUrl = 'http://localhost:3000/api/cats'
+let baseUrl = 'http://localhost:5000/api/cats'
 
 export const getCats = async () => {
   //make an axios.get call all the cats and store the response in a variable
