@@ -1,10 +1,9 @@
-import './App.css';
-import { useState, useEffect } from 'react';
+import "./App.css";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import CatDisplay from "./components/CatDisplay";
-import { destroyCat, getCats, createCat} from "./services/api-helper"
-
+import { destroyCat, getCats, createCat } from "./services/api-helper";
 
 function App() {
   const [cats, setCats] = useState([]);
@@ -13,53 +12,52 @@ function App() {
       name: "",
       chonkyness: "Chonkyness Level",
       imagelink: "",
-      biography: ""
-    }
-  })
+      biography: "",
+    },
+  });
 
   useEffect(async () => {
-    const cats = await getCats()
-    setCats({cats})
-}, [])
+    const cats = await getCats();
+    setCats({ cats });
+  }, []);
 
   const handleChange = (event) => {
-    let value = event.target.value
-    let name = event.target.name
-    setFormData(prevState => ({
+    let value = event.target.value;
+    let name = event.target.name;
+    setFormData((prevState) => ({
       ...prevState.formData,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    const cat = await createCat(formData)
-    setCats([cat, ...prevState.cats])
+    event.preventDefault();
+    const cat = await createCat(formData);
+    setCats((prevState) => [cat, ...prevState.cats]);
     setFormData({
       formData: {
         name: "",
         chonkyness: "Chonkyness Level",
         imagelink: "",
-        biography: ""
-      }
-    })
-  }
+        biography: "",
+      },
+    });
+  };
 
   const handleDelete = async (catId) => {
     await destroyCat(catId);
-    setCats(prevState.cats.filter(cat => cat._id !== catId))
-  }
-  
+    setCats((prevState) => prevState.cats.filter((cat) => cat._id !== catId));
+  };
+
   return (
-    <div className="app" >
+    <div className="app">
       <Header />
       <Form
-        handleSubmit={() => handleSubmit()}
-        handleChange={() => handleChange()}
-        formData={formData} />
-      <CatDisplay
-        cats={cats}
-        handleDelete={() => handleDelete} />
+        handleSubmit={() => handleSubmit}
+        handleChange={() => handleChange}
+        formData={formData}
+      />
+      <CatDisplay cats={cats} handleDelete={() => handleDelete} />
     </div>
   );
 }
