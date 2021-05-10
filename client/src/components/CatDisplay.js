@@ -8,25 +8,23 @@ function CatDisplay({ cats, handleDelete }) {
 
   const catInfo = cats.map((cat, index) => {
     return (
-      <div key={index} class="cat-info">
+      <div key={index} className="cat-info">
         <h3>Cat Name: {cat.name}</h3>
-        <p class="chonkyness">{cat.chonkyness}</p>
-        <p class="biography">{cat.biography}</p>
-        <img src={cat.imagelink} alt="" class="cat-image" />
-        <button
+        <p className="chonkyness">{cat.chonkyness}</p>
+        <p className="biography">{cat.biography}</p>
+        <img src={cat.imagelink} alt="" className="cat-image" />
+        <input
+          type="text"
+          className="button"
+          defaultValue="Delete"
           onClick={(e) => {
             e.preventDefault();
             handleDelete(cat._id);
           }}
-        >
-          Delete
-        </button>
+        />
       </div>
     );
   });
-  // console.log(caInfo);
-
-  // console.log(catList);
 
   return <div id="cat-display">{catInfo}</div>;
 }
