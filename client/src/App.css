@@ -1,12 +1,12 @@
-body{
+body {
   background: #ffc9df;
   margin: 0 auto;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-header{
+header {
   height: 300px;
-  background-image: url('cat-header.png');
+  background-image: url("cat-header.png");
   background-size: 60%;
   background-position: center 5px;
   margin: 0 auto;
@@ -14,46 +14,46 @@ header{
   border-bottom: 2px dashed black;
 }
 
-
-h1{
+h1 {
   font-size: 30px;
   text-align: center;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   background: white;
   border: 1px solid white;
   border-radius: 30px;
   padding: 9px auto;
   width: 30%;
   margin: 20px auto;
-  
 }
 
-.cat-info{
+.cat-info {
   margin: 10px auto;
   text-align: center;
   border: 2px dashed black;
   border-radius: 15px;
-  width:30%;
+  width: 30%;
   background: white;
 }
 
-#cat-display{
+#cat-display {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-#form-area{
+#form-area {
   border: 2px dashed black;
   border-radius: 15px;
   display: flex;
   text-align: center;
-  background: white; 
+  background: white;
   width: 40%;
   margin: 12px auto;
   padding-bottom: 12px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   width: 60%;
   height: 30px;
   border: 1px dashed black;
@@ -65,21 +65,22 @@ input, textarea, select {
   text-align: center;
 }
 
-select{
+select {
   text-indent: 102px;
 }
 
-.button, select{
+.button,
+select {
   background: #ffebf3;
 }
 
-.button{
+.button {
   cursor: pointer;
-  border: 1px dashed #FFEBF3;
+  border: 1px dashed #ffebf3;
   box-shadow: 5px 6px #ffa8cb;
 }
 
-.button:hover{
+.button:hover {
   background: #ffbfd9;
 }
 /* 
@@ -87,42 +88,42 @@ textarea{
   resize: none;
 } */
 
-h2{
+h2 {
   text-align: center;
-  font-family: 'Mansalva', cursive;
+  font-family: "Mansalva", cursive;
 }
 
-h3{
-background: #F6D0C0;
-height: 50px;
-font-size: 25px;
-text-align: center;
-font-family: 'Mansalva', cursive;
-margin-top: 0.3px;
-padding-top: 15px;
+h3 {
+  background: #f6d0c0;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Mansalva", cursive;
+  margin-top: 0.3px;
+  padding-top: 15px;
 }
 
-.chonkyness{
+.chonkyness {
   font-style: oblique;
   margin-bottom: 10px;
 }
 
-.biography{
+.biography {
   line-height: 30px;
   margin: auto 8px;
 }
 
-.cat-image{
+.cat-image {
   width: 60%;
   height: 300px;
   object-fit: cover;
 }
-.cat-image img{
+.cat-image img {
   width: 40%;
 }
 
 @media only screen and (max-width: 604px) {
-  h3{
+  h3 {
     font-size: 15px;
   }
 }

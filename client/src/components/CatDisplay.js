@@ -1,11 +1,34 @@
 function CatDisplay({ cats, handleDelete }) {
-  return (
-    <div id="cat-display">
-      {/* Display all the cats in this component, along with their properties -name, chonkyness, imagelink, biography
-        For every cat render a delete button with an onClick handler, like that onClick={(e) => { e.preventDefault(); props.handleDelete(cat._id) }}
-      */}
-    </div>
-  );
+  // const catList = cats;
+  // console.log(catList);
+  console.log(cats);
+  // if (catList === undefined) {
+  //   return null;
+  // }
+
+  const catInfo = cats.map((cat, index) => {
+    return (
+      <div key={index} class="cat-info">
+        <h3>Cat Name: {cat.name}</h3>
+        <p class="chonkyness">{cat.chonkyness}</p>
+        <p class="biography">{cat.biography}</p>
+        <img src={cat.imagelink} alt="" class="cat-image" />
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleDelete(cat._id);
+          }}
+        >
+          Delete
+        </button>
+      </div>
+    );
+  });
+  // console.log(caInfo);
+
+  // console.log(catList);
+
+  return <div id="cat-display">{catInfo}</div>;
 }
 
 export default CatDisplay;

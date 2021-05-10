@@ -7,6 +7,7 @@ import { destroyCat, getCats, createCat } from "./services/api-helper";
 
 function App() {
   const [cats, setCats] = useState([]);
+  console.log(cats);
   const [formData, setFormData] = useState({
     formData: {
       name: "",
@@ -18,7 +19,7 @@ function App() {
 
   useEffect(async () => {
     const cats = await getCats();
-    setCats({ cats });
+    setCats(cats);
   }, []);
 
   const handleChange = (event) => {
@@ -53,11 +54,11 @@ function App() {
     <div className="app">
       <Header />
       <Form
-        handleSubmit={() => handleSubmit}
-        handleChange={() => handleChange}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
         formData={formData}
       />
-      <CatDisplay cats={cats} handleDelete={() => handleDelete} />
+      <CatDisplay cats={cats} handleDelete={handleDelete} />
     </div>
   );
 }
